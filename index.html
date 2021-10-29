@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobby the Lamp</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Fontawesome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- Personal CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&display=swap');
+
+        body {
+            text-align: center;
+            transition: 300ms ease;
+            font-family: 'Montserrat' !important;
+        }
+
+        .btn {
+            border: none !important;
+            width: 50%;
+            margin: auto;
+            transition: 150ms ease;
+        }
+
+        /* .btn:hover {
+            width: 60%;
+        } */
+
+        #red {
+            background-color: #E34040;
+        }
+
+        #orange {
+            background-color: #E37B40;
+        }
+
+        #yellow {
+            background-color: #edf03f;
+        }
+
+        #green {
+            background-color: #63E340;
+        }
+
+        #blue {
+            background-color: #405CE3;
+        }
+
+        #violet {
+            background-color: #E040E3;
+        }
+
+        #rainbow {
+            background: linear-gradient(270deg, #E34040, #E37B40, #edf03f, #63E340, #405CE3, #E040E3);
+            background-size: 1400% 1400%;
+
+            -webkit-animation: rainbow 10s ease infinite;
+            -moz-animation: rainbow 10s ease infinite;
+            animation: rainbow 10s ease infinite;
+        }
+
+        .rainbowBG {
+            background: linear-gradient(270deg, #B23331, #B37F32, #D0C33A, #35B031, #314DB0, #AC31B0);
+            background-size: 1400% 1400%;
+
+            -webkit-animation: rainbow 10s ease infinite;
+            -moz-animation: rainbow 10s ease infinite;
+            animation: rainbow 10s ease infinite;
+        }
+
+        @-webkit-keyframes rainbow {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @-moz-keyframes rainbow {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        #white {
+            background-color: white;
+            border: 2px solid black !important;
+            color: black;
+        }
+
+        #off {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container mt-5">
+        <h1 style="font-weight: bolder;" id="bobby">BOBBY THE LAMP</h1>
+        <div class="d-flex flex-column justify-items-center align-content-center mx-auto">
+            <div class="m-1"><a class="btn btn-primary" id="red" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">RED</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="orange" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">ORANGE</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="yellow" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">YELLOW</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="green" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">GREEN</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="blue" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">BLUE</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="violet" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">VIOLET</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="rainbow" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">RAINBOW</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="white" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">WHITE</a></div>
+            <div class="m-1"><a class="btn btn-primary" id="off" onclick="clicker(this)" onmouseover="hoverer(this)"
+                    onmouseleave="hoverernt(this)">OFF</a></div>
+        </div>
+        <div class="d-flex flex-column justify-items-center align-content-center mx-auto w-50 pt-3">
+            <p>Put some cool info here.</p>
+        </div>
+    </main>
+    <script>
+        let body = document.querySelector('body');
+        let title = document.getElementById('bobby');
+        let canChange = true;
+
+        function clicker(elem) {
+            if (!canChange) {
+                return console.log('Bobby in cooldown...')
+            }
+            let color = elem.id, event;
+            // console.log(color);
+            switch (color) {
+                case "red":
+                    title.innerHTML = "BOBBY IS RED";
+                    body.style.backgroundColor = '#B23331';
+                    event = '01'
+                    break;
+                case "orange":
+                    title.innerHTML = "BOBBY IS ORANGE";
+                    body.style.backgroundColor = '#B37F32';
+                    event = '02'
+                    break;
+                case "yellow":
+                    title.innerHTML = "BOBBY IS YELLOW";
+                    body.style.backgroundColor = '#D0C33A';
+                    event = '03'
+                    break;
+                case "green":
+                    title.innerHTML = "BOBBY IS GREEN";
+                    body.style.backgroundColor = '#35B031';
+                    event = '04'
+                    break;
+                case "blue":
+                    title.innerHTML = "BOBBY IS BLUE";
+                    body.style.backgroundColor = '#314DB0';
+                    event = '05'
+                    break;
+                case "violet":
+                    title.innerHTML = "BOBBY IS VIOLET";
+                    body.style.backgroundColor = '#AC31B0';
+                    event = '06'
+                    break;
+                case "rainbow":
+                    title.innerHTML = "BOBBY IS A RAINBOW";
+                    event = '07'
+                    break;
+                case "white":
+                    title.innerHTML = "BOBBY IS WHITE";
+                    body.style.backgroundColor = '#DCDCDC';
+                    event = '09'
+                    break;
+                case "off":
+                    title.innerHTML = "BOBBY IS OFF";
+                    body.style.backgroundColor = '#1D1D1D';
+                    event = '08'
+                    break;
+                case "usetheidofthebuttonhere":
+                    title.innerHTML = "BOBBY IS ACTION";
+                    body.style.backgroundColor = 'if color applies to action, set a color here. if not, set whatever color.';
+                    event = '10' //Whatver the digits are after the '&monkey=eventtrigger' is in the URL
+                    break;
+            }
+            if (color == 'yellow' || color == "white") {
+                body.style.color = 'black';
+                body.style.opacity = 1;
+                body.className = '';
+            } else if (color == 'rainbow') {
+                body.className = 'rainbowBG';
+                body.style.color = 'white';
+                body.style.opacity = 1;
+            } else if (color == 'off') {
+                body.style.color = 'black';
+                body.style.opacity = 0.5;
+                body.className = '';
+            } else {
+                body.className = '';
+                body.style.color = 'white';
+                body.style.opacity = 1;
+            }
+
+            // let url = 'https://api.voicemonkey.io/trigger?access_token=4178712fbe407e30e3373775020db8d0&secret_token=7430de5ed7a2b2adc1fe8a380f5b0292&monkey=eventtrigger' + event + '&announcement=Hello%20monkey';
+            let options = {
+                method: "POST",
+                mode: 'no-cors',
+                headers: {
+                    "Content-type": "text/plain",
+                },
+                body: JSON.stringify({
+                    payload: '{"access_token":"4178712fbe407e30e3373775020db8d0","secret_token":"7430de5ed7a2b2adc1fe8a380f5b0292","monkey":"{{eventtrigger' + event + '}},"announcement"="{{Hello%20monkey}}"}'
+                }),
+            },
+                url = 'https://api.voicemonkey.io/trigger';
+            fetch(url, options)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw Error(response.statusText);
+                    } else {
+                        console.log('Color changed to ' + color)
+                    }
+                })
+                .catch((err) => {
+                    console.log(
+                        `${err.name}: ${err.message}`
+                    );
+                });
+            // var poster = window.open(url, '', 'width=0,height=0,resizable=no');
+            // window.focus();
+            // poster.resizeTo(0, 0);
+            // poster.moveTo(0, window.screen.availHeight + 100);
+            // poster.blur();
+            canChange = false;
+            setTimeout(() => {
+                // poster.close();
+                setTimeout(() => {
+                    canChange = true;
+                }, 200)
+            }, 1000)
+        }
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+<script>
+    function hoverer(elem) {
+        gsap.to(elem, { padding: "12px 0px", width: "60%", duration: 1, ease: "elastic.out(2, 0.5)" });
+    }
+    function hoverernt(elem) {
+        gsap.to(elem, { padding: "6px 0px", width: "50%", duration: 1, ease: "elastic.out(2, 0.5)" });
+    }
+</script>
+
+
+</html>
