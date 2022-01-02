@@ -1,113 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&display=swap");
 
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&display=swap');
+body {
+  text-align: center;
+  transition: 300ms ease;
+  font-family: "Montserrat" !important;
+}
 
-        body {
-            text-align: center;
-            transition: 300ms ease;
-            font-family: 'Montserrat' !important;
-        }
+.btn {
+  border: none !important;
+  width: 50%;
+  margin: auto;
+  transition: 150ms ease;
+}
 
-        .btn {
-            border: none !important;
-            width: 50%;
-            margin: auto;
-            transition: 150ms ease;
-        }
+#bobby {
+  margin: 0;
+}
+#version {
+  margin: 0;
+  padding: 0;
+}
 
-        /* .btn:hover {
-            width: 60%;
-        } */
+#red {
+  background-color: #e34040;
+}
 
-        #red {
-            background-color: #E34040;
-        }
+#orange {
+  background-color: #e37b40;
+}
 
-        #orange {
-            background-color: #E37B40;
-        }
+#yellow {
+  background-color: #edf03f;
+}
 
-        #yellow {
-            background-color: #edf03f;
-        }
+#green {
+  background-color: #63e340;
+}
 
-        #green {
-            background-color: #63E340;
-        }
+#blue {
+  background-color: #405ce3;
+}
 
-        #blue {
-            background-color: #405CE3;
-        }
+#violet {
+  background-color: #e040e3;
+}
 
-        #violet {
-            background-color: #E040E3;
-        }
+#rainbow {
+  background: linear-gradient(
+    270deg,
+    #e34040,
+    #e37b40,
+    #edf03f,
+    #63e340,
+    #405ce3,
+    #e040e3
+  );
+  background-size: 1400% 1400%;
 
-        #rainbow {
-            background: linear-gradient(270deg, #E34040, #E37B40, #edf03f, #63E340, #405CE3, #E040E3);
-            background-size: 1400% 1400%;
+  -webkit-animation: rainbow 10s ease infinite;
+  -moz-animation: rainbow 10s ease infinite;
+  animation: rainbow 10s ease infinite;
+}
 
-            -webkit-animation: rainbow 10s ease infinite;
-            -moz-animation: rainbow 10s ease infinite;
-            animation: rainbow 10s ease infinite;
-        }
+.rainbowBG {
+  background: linear-gradient(
+    270deg,
+    #b23331,
+    #b37f32,
+    #d0c33a,
+    #35b031,
+    #314db0,
+    #ac31b0
+  );
+  background-size: 1400% 1400%;
 
-        .rainbowBG {
-            background: linear-gradient(270deg, #B23331, #B37F32, #D0C33A, #35B031, #314DB0, #AC31B0);
-            background-size: 1400% 1400%;
+  -webkit-animation: rainbow 10s ease infinite;
+  -moz-animation: rainbow 10s ease infinite;
+  animation: rainbow 10s ease infinite;
+}
 
-            -webkit-animation: rainbow 10s ease infinite;
-            -moz-animation: rainbow 10s ease infinite;
-            animation: rainbow 10s ease infinite;
-        }
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
 
-        @-webkit-keyframes rainbow {
-            0% {
-                background-position: 0% 50%
-            }
+  50% {
+    background-position: 100% 50%;
+  }
 
-            50% {
-                background-position: 100% 50%
-            }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-            100% {
-                background-position: 0% 50%
-            }
-        }
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
 
-        @-moz-keyframes rainbow {
-            0% {
-                background-position: 0% 50%
-            }
+  50% {
+    background-position: 100% 50%;
+  }
 
-            50% {
-                background-position: 100% 50%
-            }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-            100% {
-                background-position: 0% 50%
-            }
-        }
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
 
-        @keyframes rainbow {
-            0% {
-                background-position: 0% 50%
-            }
+  50% {
+    background-position: 100% 50%;
+  }
 
-            50% {
-                background-position: 100% 50%
-            }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-            100% {
-                background-position: 0% 50%
-            }
-        }
+#white {
+  background-color: white;
+  border: 2px solid black !important;
+  color: black;
+}
 
-        #white {
-            background-color: white;
-            border: 2px solid black !important;
-            color: black;
-        }
+#off {
+  background-color: black;
+}
 
-        #off {
-            background-color: black;
-        }
+h4 {
+  padding: 1rem 0rem 0.5rem 0rem;
+}
+
+#n100 {
+  background-color: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(0, 0, 0, 1) !important;
+  color: black;
+}
+
+#n75 {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(0, 0, 0, 0.75) !important;
+  color: black;
+}
+
+#n50 {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.5) !important;
+  color: black;
+}
+
+#n25 {
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(0, 0, 0, 0.25) !important;
+  color: black;
+}
+
+.nonclickable {
+  user-select: none;
+  pointer-events: none;
+  /* opacity: 0.5; */
+  filter: brightness(0.5);
+}
