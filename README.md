@@ -1,3 +1,3 @@
 # Bobby the Lamp v2
 
-To preview, clone the repo and open the index.html file.
+To preview, open https://masonnamminga.github.io/bobbythelamp/ in a new tab.
