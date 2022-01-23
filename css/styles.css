@@ -45,7 +45,7 @@ body {
   background-color: #e040e3;
 }
 
-#rainbow {
+#rainbowa {
   background: linear-gradient(
     270deg,
     #e34040,
@@ -57,9 +57,26 @@ body {
   );
   background-size: 1400% 1400%;
 
-  -webkit-animation: rainbow 10s ease infinite;
-  -moz-animation: rainbow 10s ease infinite;
-  animation: rainbow 10s ease infinite;
+  -webkit-animation: rainbow 15s ease infinite;
+  -moz-animation: rainbow 15s ease infinite;
+  animation: rainbow 15s ease infinite;
+}
+
+#rainbowb {
+  background: linear-gradient(
+    270deg,
+    #e040e3,
+    #405ce3,
+    #63e340,
+    #edf03f,
+    #e37b40,
+    #e34040
+  );
+  background-size: 1400% 1400%;
+
+  -webkit-animation: rainbow 15s ease infinite;
+  -moz-animation: rainbow 15s ease infinite;
+  animation: rainbow 15s ease infinite;
 }
 
 .rainbowBG {
