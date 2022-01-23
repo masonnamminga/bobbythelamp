@@ -21,7 +21,13 @@
         <h4><span class="badge bg-primary rounded-pill">V2</span></h4>
         <h1 style="font-weight: bolder;" id="bobby">BOBBY THE LAMP</h1>
         <div class="d-flex flex-column justify-items-center align-content-center mx-auto w-50 pt-3">
-            <p>Brief informational script.</p>
+            <p>Tap on a color to change Bobby's appearance.</p>
+            <a href="#" style="display: none;" target="_blank">
+                Learn how Bobby was made
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <!-- Remove style="display: none;" when you want to have it visible, and change the # in the href to your link.
+                 target="_blank" opens the link in a new tab. -->
         </div>
         <div class="d-flex flex-column justify-items-center align-content-center mx-auto">
             <div class="m-1"><a class="btn btn-primary" id="red" onclick="clicker(this)" onmouseover="hoverer(this)"
@@ -62,11 +68,17 @@
 
 
         </div>
-        <div class="d-flex flex-column justify-items-center align-content-center mx-auto w-50 pt-3">
-            <p>More in depth thing here.</p>
+        <div id="credits">
+            <h6>Bobby the Lamp made possible by:</h6>
+            <p>Mason Namminga - <a target="_blank" href="https://instagram.com/masonnamminga">Instagram</a> - Bobby's
+                Production</p>
+            <p>Jackson Graddon - <a target="_blank" href="https://jackgraddon.page/">Website</a> - Website Development
+            </p>
         </div>
     </main>
-
+    <div id="no">
+        <h1 style="font-weight: bolder; font-size: 84pt;">NO</h1>
+    </div>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -80,9 +92,12 @@
 
         function clicker(elem) {
             if (!canChange) {
-                gsap.timeline({ repeat: 2 }).fromTo('#page-container', 0.1, { x: 0, y: 0 }, { x: -80, y: 0 })
-                    .to('#page-container', 0.1, { x: 80, y: 0 })
-                    .to('#page-container', 0.1, { x: 0, y: 0 });
+                gsap.to('#no', { display: 'flex' })
+                gsap.timeline({ repeat: 2 })
+                    .fromTo('#page-container', 0.05, { x: 0, y: 0 }, { x: 10, y: 0 })
+                    .to('#page-container', 0.05, { x: -10, y: 0 })
+                    .to('#page-container', 0.05, { x: 0, y: 0 });
+                gsap.to('#no', { display: 'none' })
                 return;
             }
             let color = elem.id, event;
@@ -210,7 +225,7 @@
                 body.style.opacity = 1;
                 document.getElementById('brightnessActions').classList.remove('nonclickable');
             } else if (color == 'off') {
-                body.style.color = 'black';
+                body.style.color = 'gray';
                 body.style.opacity = 0.5;
                 body.className = '';
                 document.getElementById('brightnessActions').classList.add('nonclickable');
@@ -266,10 +281,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 <script>
     function hoverer(elem) {
-        gsap.to(elem, { padding: "12px 0px", width: "60%", duration: 1, ease: "elastic.out(2, 0.5)" });
+        gsap.to(elem, { padding: "10px 0px", duration: 1, ease: "elastic.out(2, 0.5)" });
     }
     function hoverernt(elem) {
-        gsap.to(elem, { padding: "6px 0px", width: "50%", duration: 1, ease: "elastic.out(2, 0.5)" });
+        gsap.to(elem, { padding: "8px 0px", duration: 1, ease: "elastic.out(2, 0.5)" });
     }
 </script>
 
