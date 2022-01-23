@@ -21,18 +21,16 @@ body {
   color: rgb(255, 255, 255, 1) !important;
   background: rgba(0, 0, 0, 0.5);
 }
-/* d-flex flex-column justify-items-center align-content-center mx-auto w-50 pt-5 */
 #credits {
   display: flex;
-  flex-direction: column;
-  justify-items: center;
+  justify-content: space-around;
   align-content: center;
   margin: 0 auto;
   width: 50%;
   padding: 3rem;
 }
-#credits h6 {
-  font-style: italic;
+#credits div {
+  margin-bottom: 1rem;
 }
 #credits p {
   margin: 0;
@@ -47,14 +45,6 @@ body {
 }
 .btn:hover {
   width: 60%;
-}
-@media (max-width: 990px) {
-  .btn {
-    width: 90%;
-  }
-  .btn:hover {
-    width: 90%;
-  }
 }
 
 #bobby {
@@ -225,4 +215,16 @@ h4 {
   pointer-events: none;
   /* opacity: 0.5; */
   filter: brightness(0.5);
+}
+
+@media (max-width: 990px) {
+  .btn {
+    width: 90%;
+  }
+  .btn:hover {
+    width: 90%;
+  }
+  #credits {
+    width: 100%;
+  }
 }
